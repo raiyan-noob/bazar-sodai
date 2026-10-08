@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Hind_Siliguri } from "next/font/google";
-import Navbar from "@/src/app/shared/Navbar";
+import Navbar from "@/src/app/shared/Navbar/page"
 
 
 const font = Hind_Siliguri({
@@ -18,9 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="bn" data-theme="bazar">
       <body className={`${font.className} flex min-h-screen flex-col bg-base-200 text-base-content`}>
-        <header className="border-b border-base-300 bg-base-100">
           <Navbar />
-        </header>
         <main className="flex-1">{children}</main>
        
       </body>

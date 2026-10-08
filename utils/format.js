@@ -3,7 +3,6 @@ const BN = "০১২৩৪৫৬৭৮৯";
 export const toBn = (v) => String(v).replace(/\d/g, (d) => BN[d]);
 export const toEn = (v) => String(v).replace(/[০-৯]/g, (d) => BN.indexOf(d));
 
-// Works with numbers AND Bengali-digit strings (for correct numeric sorting)
 export const toNum = (v) =>
   typeof v === "number" ? v : parseFloat(toEn(v).replace(/,/g, "")) || 0;
 
@@ -39,8 +38,8 @@ export function getDir(change) {
   return change.dir === "up" || change.dir === "down" ? change.dir : "flat";
 }
 
-export const bnDate = () =>
-  new Date().toLocaleDateString("bn-BD", {
+export const bnDate = (date) =>
+  date.toLocaleDateString("bn-BD", {
     weekday: "long",
     day: "numeric",
     month: "long",
