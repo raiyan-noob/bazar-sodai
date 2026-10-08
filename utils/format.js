@@ -38,7 +38,7 @@ export function getDir(change) {
   return change.dir === "up" || change.dir === "down" ? change.dir : "flat";
 }
 
-export const bnDate = (date) =>
+export const bnDate = (date = new Date()) =>
   date.toLocaleDateString("bn-BD", {
     weekday: "long",
     day: "numeric",

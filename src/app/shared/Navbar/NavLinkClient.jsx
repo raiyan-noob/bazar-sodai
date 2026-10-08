@@ -14,7 +14,7 @@ const NavLinkClient = ({ categories }) => {
           return (
             <li key={c.id}>
               <Link
-                href={`/category/${c.slug}`}
+                href={`/pages/Category/${c.slug}`}
                 aria-current={active ? "page" : undefined}
                 className={`flex items-center gap-1.5 whitespace-nowrap rounded-lg px-3 py-1.5 text-sm transition ${
                   active

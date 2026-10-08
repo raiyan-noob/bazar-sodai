@@ -2,7 +2,7 @@ import Link from "next/link";
 import { headers } from "next/headers";
 import { getAuth } from "@/lib/auth";
 import Avatar from "../Avatar";
-//import SignOutButton from "../SignOutButton";
+import SignOutButton from "../SignOutButton";
 
 const UserInfo = async () => {
   const session = await getAuth().api.getSession({ headers: await headers() });
@@ -32,7 +32,7 @@ const UserInfo = async () => {
         <Link href="/profile" className="block rounded-md px-2 py-1.5 text-sm hover:bg-base-200">
           👤 আমার প্রোফাইল
         </Link>
-        {/*<SignOutButton className="w-full rounded-md px-2 py-1.5 text-left text-sm text-red-600 hover:bg-red-50" />*/}
+        <SignOutButton className="w-full rounded-md px-2 py-1.5 text-left text-sm text-red-600 hover:bg-red-50" />
       </div>
     </div>
   );
