@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { headers } from "next/headers";
+import { connection } from "next/server";
 import { getAuth } from "@/lib/auth";
 import Avatar from "../Avatar";
 import SignOutButton from "../SignOutButton";
 
 const UserInfo = async () => {
+  await connection();
   const session = await getAuth().api.getSession({ headers: await headers() });
   const user = session?.user;
 

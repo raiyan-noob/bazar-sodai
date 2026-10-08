@@ -1,5 +1,21 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Repairing orphaned OAuth accounts
+
+If Better Auth reports that an OAuth account references a missing user, inspect the affected records with:
+
+```bash
+npm run auth:repair-orphaned-accounts
+```
+
+This command is a dry run by default. After reviewing the listed records, remove only the orphaned account records with:
+
+```bash
+npm run auth:repair-orphaned-accounts -- --apply
+```
+
+The repair does not delete user records or valid account links. After it completes, try signing in with the social provider again. Configure both `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` and `GITHUB_CLIENT_ID` / `GITHUB_CLIENT_SECRET` in `.env` to enable both social sign-in buttons.
+
 ## Getting Started
 
 First, run the development server:

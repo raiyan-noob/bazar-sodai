@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "auth:repair-orphaned-accounts": "node --env-file=.env scripts/repair-orphaned-auth-accounts.mjs"
   },
   "dependencies": {
     "@better-auth/mongo-adapter": "^1.7.7",
