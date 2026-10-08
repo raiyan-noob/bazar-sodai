@@ -31,7 +31,7 @@ const UserInfo = async () => {
         <p className="text-sm font-semibold">{user.name}</p>
         <p className="mb-2 truncate text-xs text-base-content/60">{user.email}</p>
         <div className="divider my-1" />
-        <Link href="/profile" className="block rounded-md px-2 py-1.5 text-sm hover:bg-base-200">
+        <Link href="/pages/profile" className="block rounded-md px-2 py-1.5 text-sm hover:bg-base-200">
           👤 আমার প্রোফাইল
         </Link>
         <SignOutButton className="w-full rounded-md px-2 py-1.5 text-left text-sm text-red-600 hover:bg-red-50" />
