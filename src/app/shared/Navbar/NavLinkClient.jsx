@@ -10,7 +10,7 @@ const NavLinkClient = ({ categories }) => {
     <nav className="mx-auto max-w-6xl overflow-x-auto px-4 pb-2">
       <ul className="flex w-max min-w-fullgap-1 md:w-full ">
         {categories.map((c) => {
-          const active = pathname === `/category/${c.slug}`;
+          const active = pathname === `/pages/Category/${c.slug}`;
           return (
             <li key={c.id}>
               <Link
