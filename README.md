@@ -1,52 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Bazar Sodai
 
-## Repairing orphaned OAuth accounts
+Bazar Sodai is a modern e-commerce platform built with Next.js that combines a clean shopping experience with secure user authentication. The app helps users browse products, track price movements, and access personalized account features with email or social login.
 
-If Better Auth reports that an OAuth account references a missing user, inspect the affected records with:
+## Technologies Used
 
-```bash
-npm run auth:repair-orphaned-accounts
-```
+- Next.js
+- Better Auth
+- MongoDB
+- Tailwind CSS
+- DaisyUI
+- JavaScript / JSX
 
-This command is a dry run by default. After reviewing the listed records, remove only the orphaned account records with:
+## Key Features
 
-```bash
-npm run auth:repair-orphaned-accounts -- --apply
-```
+1. Secure Authentication System
+   - Email sign-up and sign-in support
+   - Protected profile pages and session-based access control
+   - Built with Better Auth for reliable user management
 
-The repair does not delete user records or valid account links. After it completes, try signing in with the social provider again. Configure both `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` and `GITHUB_CLIENT_ID` / `GITHUB_CLIENT_SECRET` in `.env` to enable both social sign-in buttons.
+2. Social Login Integration
+   - Google and GitHub sign-in options
+   - Quick onboarding for users without manual registration
+
+3. Product Catalog Experience
+   - Product browsing with category-based organization
+   - Clean, modern storefront layout optimized for mobile and desktop
+
+4. Price Trend Tracking
+   - Highlights products whose prices increased or decreased
+   - Helps users make better purchase decisions based on recent trends
+
+5. Personalized User Profiles
+   - Users can manage their account details and update profile information
+   - A smooth shopping experience with account-aware navigation
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Environment Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To enable social authentication, configure the following variables in your `.env` file:
 
-## Learn More
+```bash
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+GITHUB_CLIENT_ID=your_github_client_id
+GITHUB_CLIENT_SECRET=your_github_client_secret
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is designed to provide a polished storefront experience with a secure authentication layer, making it a strong foundation for a real-world online marketplace.
