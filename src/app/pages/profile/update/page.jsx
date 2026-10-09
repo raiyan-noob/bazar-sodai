@@ -1,14 +1,15 @@
 import Link from "next/link";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import { connection } from "next/server";
 import { Suspense } from "react";
 import { getAuth } from "@/lib/auth";
 import UpdateForm from "./UpdateForm";
 
-export const instant = false;
-
 const UpdateProfileContent = async () => {
-  const session = await getAuth().api.getSession({ headers: await headers() });
+  await connection();
+  const requestHeaders = await headers();
+  const session = await getAuth().api.getSession({ headers: requestHeaders });
   if (!session) redirect("/signin?redirect=/pages/profile/update");
 
   return (
