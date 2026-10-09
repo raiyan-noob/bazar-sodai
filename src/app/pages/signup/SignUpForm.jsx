@@ -43,7 +43,7 @@ export default function SignUpForm() {
         );
       }
 
-      toast.success("অ্যাকাউন্ট তৈরি হয়েছে! এখন সাইন ইন করুন");
+      toast.success("অ্যাকাউন্ট তৈরি সফল হয়েছে!");
       router.refresh();
       router.push("/");
     } catch (err) {
